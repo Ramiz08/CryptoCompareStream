@@ -32,4 +32,5 @@ I have included some comments on the following files that highlight changes and/
 ./cryptocomparestream/src/app.controller.ts
 ./cryptocomparestream/src/app.service.ts
 ./cryptocomparestream/src/app.module.ts
+./frontend/src/app/app.component.ts
 ```
