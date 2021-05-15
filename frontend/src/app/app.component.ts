@@ -13,11 +13,11 @@ export class AppComponent {
   EUR_price: string = "-";
   JPY_price: string = "-";
   ZAR_price: string = "-";
-  
+
   constructor(private http: HttpClient) {}
 
-  getBTC(){
-    this.http.get('http://localhost:3000').subscribe(res => {
+  getBTC(crypto: string){
+    this.http.get(`http://localhost:3000/${crypto}`).subscribe(res => {
       this.USD_price = res["USD"]
       this.GBP_price = res["GBP"]
       this.EUR_price = res["EUR"]
