@@ -4,6 +4,8 @@ import { MatRadioChange } from '@angular/material/radio';
 
 /**
    * Prod changes: using an Interface to store all the prices and then display them
+   * Prod additions: include option for user to define how long between intervals
+   * Prod additions: replace interval timer with webhook.
    * Prod addition: including option to have other crypto values shown as prices if not selected 
    * (ie when BTC is selected, it will show the prices for fiat and ETH/XRP/LTC/BCH/ETC)
    * Prod additions: Using Table component in Angular Material to better display the content
@@ -29,16 +31,25 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {}
 
+  /**
+   * Starts to get and set the prices on page, every 1 second
+   */
   startStream(){
     console.log("Starting the stream")
     this.timer = setInterval(()=> { this.setPrices(this.selectedSymbl) }, 1 * 1000);
   }
 
+  /**
+   * Stop interval timer
+   */
   stopStream(){
     console.log("Stopping the stream")
     clearInterval(this.timer) 
   }
 
+  /**
+   * Hits the NestJS endpoint to get prices and sets the values on the page
+   */
   setPrices(symb: string){
     console.log("stream has started")
     this.http.get(`http://localhost:3000/crypto/${symb}`).subscribe(res => {
@@ -50,6 +61,9 @@ export class AppComponent {
     })
   }
 
+  /**
+   * Capturing the change of a radop button selection and updating the 'selectedSymbl' var
+   */
   radioButtonSelected(event: MatRadioChange){
     this.selectedSymbl = event.value
   }

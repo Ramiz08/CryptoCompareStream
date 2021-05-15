@@ -15,6 +15,10 @@ export class AppService {
    * Prod additions: add endpoints that use the other options available from CryptoCompare
    */
 
+  /**
+   * Makes a HTTP GET request to CryptoCompare API to retrieve prices in USD/GBP/EUR/JPY/ZAR
+   * Params: symbol of crypto to get data of (string)
+   */
   getPrices(crypto: string): Observable<any>{
     return this.http.get(`https://min-api.cryptocompare.com/data/price?fsym=${crypto}&tsyms=USD,GBP,EUR,JPY,ZAR`)
       .pipe(
