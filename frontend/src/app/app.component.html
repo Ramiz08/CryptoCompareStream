@@ -1,11 +1,18 @@
 <div>
+  <button mat-raised-button (click)="startStream()">Start stream!</button>
+  <button mat-raised-button (click)="stopStream()">Stop stream!</button>
+</div>
+
+<div>
   <h3 >Choose Crypto</h3>
-  <button mat-raised-button (click)="getBTC('btc')">BTC</button>
-  <button mat-raised-button (click)="getBTC('eth')">ETH</button>
-  <button mat-raised-button (click)="getBTC('xrp')">XRP</button>
-  <button mat-raised-button (click)="getBTC('ltc')">LTC</button>
-  <button mat-raised-button (click)="getBTC('bch')">BCH</button>
-  <button mat-raised-button (click)="getBTC('etc')">ETC</button>
+  <mat-radio-group>
+    <mat-radio-button value="btc" (change)="radioButtonSelected($event)" [checked]="true">BTC</mat-radio-button>
+    <mat-radio-button value="eth" (change)="radioButtonSelected($event)">ETH</mat-radio-button>
+    <mat-radio-button value="xrp" (change)="radioButtonSelected($event)">XRP</mat-radio-button>
+    <mat-radio-button value="ltc" (change)="radioButtonSelected($event)">LTC</mat-radio-button>
+    <mat-radio-button value="bch" (change)="radioButtonSelected($event)">BCH</mat-radio-button>
+    <mat-radio-button value="etc" (change)="radioButtonSelected($event)">ETC</mat-radio-button>
+  </mat-radio-group>
 </div>
 
 <div>

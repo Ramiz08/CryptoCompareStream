@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-
+import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
 
 /**
@@ -7,7 +7,8 @@ import {MatButtonModule} from '@angular/material/button';
  * Adding to this will allow 'app' to use the component without importing itself
  */
 const MaterialComponents = [
-  MatButtonModule
+  MatButtonModule,
+  MatRadioModule
 ]
 
 @NgModule({
