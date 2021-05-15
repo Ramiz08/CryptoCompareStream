@@ -1,1 +1,20 @@
-<button mat-raised-button>Hello World</button>
+<div>
+  <h3 >Choose Crypto</h3>
+  <button mat-raised-button (click)="getBTC()">BTC</button>
+  <button mat-raised-button>ETH</button>
+  <button mat-raised-button>XRP</button>
+  <button mat-raised-button>LTC</button>
+  <button mat-raised-button>BCH</button>
+  <button mat-raised-button>ETC</button>
+</div>
+
+<div>
+  <h3>Prices</h3>
+  <div>
+    <h4>USD: {{USD_price}}</h4>
+    <h4>GBP: {{GBP_price}}</h4>
+    <h4>EUR: {{EUR_price}}</h4>
+    <h4>JPY: {{JPY_price}}</h4>
+    <h4>ZAR: {{ZAR_price}}</h4>
+  </div>  
+</div>
