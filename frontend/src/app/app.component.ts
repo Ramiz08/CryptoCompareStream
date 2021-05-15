@@ -1,6 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
+/**
+   * Prod changes: using an Interface to store all the prices and then display them
+   * Prod additions: Using Table component in Angular Material to better display the content
+   * Prod additions: Enabling user to add which output currencies they wanted to see in the price stream
+   */
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
