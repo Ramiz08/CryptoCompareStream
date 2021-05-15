@@ -5,33 +5,33 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
+  @Get('btc')
   getBTC() {
-    return this.appService.getBTC();
+    return this.appService.getPrices('btc');
   }
 
-  @Get()
+  @Get('eth')
   getETH() {
-    return this.appService.getETC();
+    return this.appService.getPrices('eth');
   }
 
-  @Get()
+  @Get('xrp')
   getXRP() {
-    return this.appService.getXRP();
+    return this.appService.getPrices('xrp');
   }
 
-  @Get()
+  @Get('ltc')
   getLTC() {
-    return this.appService.getLTC();
+    return this.appService.getPrices('ltc');
   }
 
-  @Get()
+  @Get('bch')
   getBCH() {
-    return this.appService.getBCH();
+    return this.appService.getPrices('bch');
   }
   
-  @Get()
+  @Get('etc')
   getETC() {
-    return this.appService.getETC();
+    return this.appService.getPrices('etc');
   }
 }
