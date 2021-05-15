@@ -24,3 +24,12 @@ To start the Angular Frontend
 cd frontend
 ng serve
 ```
+
+## Production changes/additions
+I have included some comments on the following files that highlight changes and/or additions that I would include if moving this application into production.
+
+```
+./cryptocomparestream/src/app.controller.ts
+./cryptocomparestream/src/app.service.ts
+./cryptocomparestream/src/app.module.ts
+```

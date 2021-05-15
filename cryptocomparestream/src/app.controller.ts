@@ -5,6 +5,12 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  /**
+   * Prod changes: include ':crypto' in the endpoint URL params, which will mean only one endpoint replaces all the below
+   * Prod addition: having a endpoint that will check health of services; to check if NestJS server is alive, if cryptocompare is working etc.
+   */
+
+  
   @Get('btc')
   getBTC() {
     return this.appService.getPrices('btc');
