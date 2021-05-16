@@ -32,7 +32,7 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return object with more than 1 key', () => {
-      expect(appController.getBTC().subscribe(res => expect(Object.keys.length).toBeGreaterThan(0)))
+      expect(appController.getCryptoPrice('btc').subscribe(res => expect(Object.keys.length).toBeGreaterThan(0)))
     })
   })
 });
