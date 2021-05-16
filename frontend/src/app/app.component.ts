@@ -36,7 +36,9 @@ export class AppComponent {
    */
   startStream(){
     console.log("Starting the stream")
-    this.timer = setInterval(()=> { this.setPrices(this.selectedSymbl) }, 1 * 1000);
+    this.timer = setInterval(()=> { 
+      this.setPrices(this.selectedSymbl) 
+    }, 1 * 1000);
   }
 
   /**
@@ -44,14 +46,13 @@ export class AppComponent {
    */
   stopStream(){
     console.log("Stopping the stream")
-    clearInterval(this.timer) 
+    clearInterval(this.timer)
   }
 
   /**
    * Hits the NestJS endpoint to get prices and sets the values on the page
    */
   setPrices(symb: string){
-    console.log("stream has started")
     this.http.get(`http://localhost:3000/crypto/${symb}`).subscribe(res => {
       this.USD_price = res["USD"]
       this.GBP_price = res["GBP"]
