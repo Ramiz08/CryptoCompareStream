@@ -22,6 +22,7 @@ npm run test
 To start the Angular Frontend
 ```
 cd frontend
+npm install
 ng serve
 ```
 
