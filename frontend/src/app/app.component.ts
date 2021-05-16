@@ -20,7 +20,7 @@ import { MatRadioChange } from '@angular/material/radio';
 })
 export class AppComponent {
   timer;
-  selectedSymbl;
+  selectedSymbl = 'btc';
 
   // Price variables (default)
   USD_price: string = "-";
